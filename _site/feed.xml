@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 30 Apr 2015 09:41:31 -0700</pubDate>
+    <lastBuildDate>Thu, 30 Apr 2015 09:41:31 -0700</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>My First Blog Post</title>
+        <description>&lt;p&gt;Who I Am, and Why I’m Doing This:&lt;/p&gt;
+
+&lt;p&gt;My name is Dominic Smith, and I am an asipiring developer.&lt;/p&gt;
+
+&lt;p&gt;The tl;dr version is I am a San Francisco native with a degree in Anthropology who is now trying to become a full-stack developer. I am also a veteran who deployed to Iraq and served as an all-source intelligence analyst in the Army.&lt;/p&gt;
+
+&lt;p&gt;Since leaving the military in 2011, I graduated with a bachelors degree in Anthropology (and a minor in Middle Eastern and Islamic Studies) from SF State in 2014. After looking for intel jobs after college, I decided that in order to stay in the Bay Area (my home and the home of most of the people I care about) I would need to find a different career path. Enter Galvanize, and gSchool.&lt;/p&gt;
+
+&lt;p&gt;I have recently embarked on a journey to become a developer. In preparation for this journey I’ve done a some self-learning, mainly through great resources like Code School, Code Academy, Javascript is Sexy, and few dead-tree books.&lt;/p&gt;
+
+&lt;p&gt;What you are looking at now is my very first attempt at a legitimate site. All my other projects to date have been ‘Hello World’s’ and tutorial exercises. This is ground zero, this is my foundation… and I promise that it only gets better from here.&lt;/p&gt;
+
+&lt;p&gt;I’m going to keep a &lt;strong&gt;Blog&lt;/strong&gt; during my education at Galvanize. In this blog, I’ll talk about some of the lessons, both I have learned and that instructors have tried to teach me.&lt;/p&gt;
+
+&lt;p&gt;As I get more advanced, I’ll start including project diaries, and other fun stuff I discover along the way.&lt;/p&gt;
+
+&lt;p&gt;Until next time.&lt;/p&gt;
+
+&lt;p&gt;PS. This image came with the Jekyll theme. In honor of the themes creator, I’ll leave it here.&lt;/p&gt;
+
+&lt;div class=&quot;post-img&quot;&gt;
+&lt;img class=&quot;img-responsive img-post&quot; src=&quot; /img/tiger.jpeg &quot; /&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 28 Apr 2015 16:25:05 -0700</pubDate>
+        <link>http://yourdomain.com/first/blog/2015/04/28/first-post.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/first/blog/2015/04/28/first-post.html</guid>
+        
+        
+        <category>first</category>
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>

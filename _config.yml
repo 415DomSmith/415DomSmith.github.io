@@ -1,0 +1,14 @@
+# Site settings
+title: DVS Programming Blog
+smalltalk: "Full-stack Jedi Knighthood Awaits"
+description: > # Dominic Smith's blog on his journey towards becomming a full-stack Jedi
+baseurl: "" # the subpath of your site, e.g. /blog/
+paginate: 5
+url: "" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  
+facebook_username: 
+portfolio_url: 
+
+# Build settings
+markdown: kramdown
