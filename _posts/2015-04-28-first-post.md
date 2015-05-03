@@ -12,7 +12,7 @@ Who I Am, and Why I'm Doing This:
 
 My name is Dominic Smith, and I am an aspiring developer. 
 
-The tl;dr version is I am a San Francisco native with a degree in Anthropology who is now trying to become a full-stack developer. To reach this goal, I am currently enrolled Galvanize's six month long [full-stack course](http://www.galvanize.com/courses/full-stack/) in San Francisco.
+The tl;dr version is I am a San Francisco native with a degree in Anthropology who is now trying to become a full-stack developer. To reach this goal, I am currently enrolled at Galvanize's six month long [full-stack course](http://www.galvanize.com/courses/full-stack/) in San Francisco.
 
 
 The longer version is that I am also a veteran who deployed to Iraq and served as an all-source intelligence analyst in the Army. Since leaving the military in 2011, I graduated with a Bachelors degree in Anthropology (and a minor in Middle Eastern and Islamic Studies) from SF State in 2014. After looking for jobs in as a civilian intelligence jobs after college, I decided that in order to stay in the Bay Area (my home and the home of most of the people I care about) I would need to find a different career path. Enter [Galvanize](http://www.galvanize.com/), and gSchool.
