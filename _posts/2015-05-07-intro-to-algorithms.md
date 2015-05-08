@@ -33,17 +33,23 @@ To start our adventure in to algorithms, we began with sorting algorithms. The c
 * And probably more I am missing... 
 
 <br>
-There's a great website that visually displays how some of the different sorting algorithms work at [www.sorting-algorithms.com](http://www.sorting-algorithms.com/), how efficient they are at different tasks.
+There's a great website that visually displays how some of the different sorting algorithms work and how efficient they are at different tasks, at [www.sorting-algorithms.com](http://www.sorting-algorithms.com/). 
 
 As an introduction to algorithms, we focused on bubble sort because it is one of the easier sorting algorithms to understand and reproduce. We used it to organize data inside an array, sorting numerical values from lowest to highest. To do this, bubble sort takes two values and compares them. The largest value gets moved to the higher position (bubbles to the top). The algorithm does this for nearly every value, but as a value gets sorted to the top, it is no longer checked. So as we get to the lower values, there are less values to run through to check. 
 
 Here's a great video explaining how bubble sort works and why it is awesome: 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Jdtq5uKz-w4" frameborder="0" allowfullscreen></iframe>
+
+[![Bubble Sort Algoritm](http://img.youtube.com/vi/Jdtq5uKz-w4/0.jpg)](https://www.youtube.com/watch?v=Jdtq5uKz-w4 "Bubble Sort Algorithm")
+
+
+
 <br>
-Once we understood how it worked, we had to create it from scratch. My initial version got the job done, but it modified the original array that was passed through. If you hit the **Run** button, you'll see the array ```[6666,29,543,3,45,78,21,9,666,30,67,77,88,99,103,30,1284,8]``` get passed through and sorted from lowest to highest.
+Once we understood how it worked, we had to create it from scratch. My initial version got the job done, but it modified the original array that was passed through. If you hit the **Run** button, you'll see the array 
+```[6666,29,543,3,45,78,21,9,666,30,67,77,88,99,103,30,1284,8]``` 
+get passed through and sorted from lowest to highest.
 <br><br>
 
-<a class="jsbin-embed" href="http://jsbin.com/menapalaje/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/qokeremugu/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 <br>
 
@@ -52,7 +58,7 @@ This function is considered a destructive operation because it modifies the orig
 This time I wrote bubble sort to not be so destructive, instead copying all of its original values in its original order to a new array, and then modifying that new array, leaving the original one intact. The code is little longer, but functions the same way, with the sorted array then being checked for its median value. 
 <br><br>
 
-<a class="jsbin-embed" href="http://jsbin.com/repojipavo/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+<a class="jsbin-embed" href="http://jsbin.com/jizutideze/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 <br>
 
