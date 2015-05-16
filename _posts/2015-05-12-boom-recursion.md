@@ -13,9 +13,9 @@ More new concepts! Yay-ish!
 
 So we journeyed down the rabbit hole that is recursion at the end of last week. For those who were like me before this class, and have no idea what recursion is... I think the official definiton is:
 
-```re·cur·sion -(riˈkərs-on)
+<code>re·cur·sion -(riˈkərs-on)
 
-Adjective. See definition of recursive.```
+Adjective. See definition of recursive.</code>
 
 That's a bad joke, but apparently part of the hazing process of joining the recursion brotherhood (recursion is kind of culty...).
 
@@ -29,9 +29,9 @@ The smallest version of this doll is a big part of what we're looking for in rec
 
 Recursion is a way to solve a problem by only solving a smaller portion of the larger problem. This concept mainly applies to instances where we would need to use itterations or loops inside a function to get the function to work. Just about any function that can be solved with a loop can be solved through recursion, and vice versa. Now this doesn't always mean that recursion is the best or systemicly fastest way to solve a function, but it often does require less written code. 
 
-So when we write a recursive function (which we'll look at in a minute), we are making the function do all the work by calling the function within itself. In order to make sure that the function doesn't continue forever (or until a stack overflow, which we'll also talk about in a minute), we want to decrease some value passed through the function, and set a lower limit for this value (which will be our base case). When the base case is reached, we stop calling the function within itself, and instead return a base value. 
+So when we write a recursive function (which we'll look at in a second), we are making the function do all the work by calling the function within itself. In order to make sure that the function doesn't continue forever (or until a stack overflow, which we'll look at in a minute), we want to decrease some value passed through the function, and set a lower limit for this value (which will be our base case). When the base case is reached, we stop calling the function within itself.
 
-So let's look at a simple recursive function that is a pretty standard introduction to recursive functions, factorials:
+So let's look at recursive function that is a pretty standard introduction to how recursion works, factorials:
 
 <a class="jsbin-embed" href="http://jsbin.com/bixanayulo/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
