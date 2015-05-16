@@ -3,7 +3,7 @@ layout: post
 title:  "Bang -- Recursion"
 date:   2015-05-12 14:36:05
 author: Dominic V. Smith
-categories: gSchool Blog algorithms recursion
+categories: gSchool Blog recursion
 image: true
 ---
 
@@ -42,7 +42,7 @@ which equals 120.
 
 To simplify this, we know that the factorial of 5 (120) is 5 x the factorial of 4 or ```4 x 3 x 2 x 1``` or 24. And to simplify this even further, we know that factorial 4 (24) is 4 x the factorial of 3 or ```3 x 2 x 1```which is 6. We can keep going down until our base, which is 1. 
 
-This creates a cascading effect, where as we simplify it, we decrease the values we are working with until it's something base and small (like 1). And this is why recursion is awesome, because rather than working with a big number (like 120) or a big problem, we can work with smaller numbers, and solve a smaller portion of that larger problem. If we look at our code above, we'll see that our initial question is the factorial of n, which in this example is 5. But rather than solve for n, we are trying to solve for ```factorialR(n-1)``` or ```n - 1``` (4). Because the function is calling itself on every pass, we're subtracting 1 from n on every pass, until we get our base.
+This creates a cascading effect, and as we simplify it, we decrease the values we are working with until it's something base and small (like 1). And this is why recursion is awesome, because rather than working with a big number (like 120) or a big problem, we can work with smaller numbers, and solve a smaller portion of that larger problem. If we look at our code above, we'll see that our initial question is the factorial of n, which in this example is 5. But rather than solve for n, we are trying to solve for ```factorialR(n-1)``` or ```n - 1``` (4). Because the function is calling itself on every pass, we're subtracting 1 from n on every pass, until we get our base.
 
 Again, looking at the code, we see that our base is ```if n === 0```. This means that when our passed value (n) gets down to 0, we've recursed down as far as we can, and then the function will work on returning back up.
 
