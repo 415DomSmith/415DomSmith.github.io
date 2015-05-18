@@ -35,7 +35,7 @@ So let's look at recursive function that is a pretty standard introduction to ho
 
 <a class="jsbin-embed" href="http://jsbin.com/bixanayulo/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
-To find the factorial of a number, you take that and you multiply it by every number below it.
+To find the factorial of a number, you take that number and you multiply it by every number below it.
 
 So the factorial of 5 would be: ```5 x 4 x 3 x 2 x 1```
 which equals 120.
