@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://learn.jquery.com/about-jquery/how-jquery-works/ -->
+<html class="js multiplebgs boxshadow cssgradients wf-klavikaweb-i7-active wf-klavikaweb-n7-active wf-sourcecodepro-n4-active wf-sourcecodepro-n7-active wf-active" lang="en-US"><!--<![endif]--><head data-live-domain="learn.jquery.com"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./2015-05-18-DOM manipulation_files/ados"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>How jQuery Works | jQuery Learning Center</title>
+
+	<meta name="author" content="jQuery Foundation - jquery.org">
+	<meta name="description" content="jQuery: The Write Less, Do More, JavaScript Library">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="https://learn.jquery.com/jquery-wp-content/themes/learn.jquery.com/i/favicon.ico">
+
+	<link rel="stylesheet" href="https://learn.jquery.com/jquery-wp-content/themes/jquery/css/base.css?v=1">
+	<link rel="stylesheet" href="https://learn.jquery.com/jquery-wp-content/themes/learn.jquery.com/style.css">
+
+	<script type="text/javascript" async="" src="./2015-05-18-DOM manipulation_files/ga.js"></script><script src="./2015-05-18-DOM manipulation_files/modernizr.custom.2.8.3.min.js"></script>
+
+	<script src="./2015-05-18-DOM manipulation_files/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="//learn.jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.11.2.min.js"><\/script>')</script>
+
+	<script src="./2015-05-18-DOM manipulation_files/plugins.js"></script>
+	<script src="./2015-05-18-DOM manipulation_files/main.js"></script>
+
+	<script src="./2015-05-18-DOM manipulation_files/wde1aof.js"></script>
+	<style type="text/css">.tk-source-code-pro{font-family:"source-code-pro",sans-serif;}.tk-klavika-web{font-family:"klavika-web",sans-serif;}</style><link rel="stylesheet" href="https://use.typekit.net/c/29b1ce/1w;klavika-web,2,PYh:F:i7,PYg:F:n7;source-code-pro,2,Y1M:F:n4,Y1P:F:n7/d?3bb2a6e53c9684ffdc9a98f2135b2a6250f2340d8ca0853b7df9676f5fa610fe069f9d29c9b5e67ae7b6312a16ff95d3a73356eed53502d6630d88cb0fe9789e0ac2d9a6c14ac282069f97be80efceecd4f5e0e58b889e8649ff22efc0c4063e9f9f87c7a8920dcab32add3496e6b09e6a94141aaaeb81a4bb1d4a09b8a14ac46d7d0dff3bf6532c044b0313c5ed1d7226c76cac5039645b4082ff59a8953c4e06ef9a344cf9265e8de3ed48ac2f34b281583cbaf6f2f580f7709eba9ea284dc14f4722ed0e264d7faa135466fbba043f093297f0efc92bfcb7b3eb8761407436be31d8029117f1a72aa7b8b6319c956c739e194567c906c75"><script>try{Typekit.load();}catch(e){}</script>
+
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/learn.jquery.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f;c.supports={simple:d("simple"),flag:d("flag")},c.supports.simple&&c.supports.flag||(f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./2015-05-18-DOM manipulation_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<meta name="generator" content="WordPress 4.2.1">
+
+</head>
+<body class="jquery-learn page page-id-53 page-child parent-pageid-1 page-template-default page-slug-how-jquery-works single-author singular">
+
+<header>
+	<section id="global-nav">
+		<nav>
+			<div class="constrain">
+				<ul class="projects">
+					<li class="project jquery"><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+					<li class="project jquery-ui"><a href="http://jqueryui.com/" title="jQuery UI">jQuery UI</a></li>
+					<li class="project jquery-mobile"><a href="http://jquerymobile.com/" title="jQuery Mobile">jQuery Mobile</a></li>
+					<li class="project sizzlejs"><a href="http://sizzlejs.com/" title="Sizzle">Sizzle</a></li>
+					<li class="project qunitjs"><a href="http://qunitjs.com/" title="QUnit">QUnit</a></li>
+				</ul>
+				<ul class="links l_tinynav1">
+					<li><a href="http://plugins.jquery.com/">Plugins</a></li>
+					<li class="dropdown"><a href="http://contribute.jquery.org/">Contribute</a>
+						<ul>
+							<li><a href="http://contribute.jquery.org/CLA/">CLA</a></li>
+							<li><a href="http://contribute.jquery.org/style-guide/">Style Guides</a></li>
+							<li><a href="http://contribute.jquery.org/triage/">Bug Triage</a></li>
+							<li><a href="http://contribute.jquery.org/code/">Code</a></li>
+							<li><a href="http://contribute.jquery.org/documentation/">Documentation</a></li>
+							<li><a href="http://contribute.jquery.org/web-sites/">Web Sites</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="http://events.jquery.org/">Events</a>
+						<ul class="wide">
+																		</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/support/">Support</a>
+						<ul>
+							<li><a href="http://learn.jquery.com/">Learning Center</a></li>
+							<li><a href="http://try.jquery.com/">Try jQuery</a></li>
+							<li><a href="http://irc.jquery.org/">IRC/Chat</a></li>
+							<li><a href="http://forum.jquery.com/">Forums</a></li>
+							<li><a href="http://stackoverflow.com/tags/jquery/info">Stack Overflow</a></li>
+							<li><a href="https://jquery.org/support/">Commercial Support</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/">jQuery Foundation</a>
+						<ul>
+							<li><a href="https://jquery.org/join/">Join</a></li>
+							<li><a href="https://jquery.org/members/">Members</a></li>
+							<li><a href="https://jquery.org/team/">Team</a></li>
+							<li><a href="http://brand.jquery.org/">Brand Guide</a></li>
+							<li><a href="https://jquery.org/donate/">Donate</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+</header>
+
+<div id="container">
+	<div id="logo-events" class="constrain clearfix">
+		<h2 class="logo"><a href="https://learn.jquery.com/" title="jQuery Learning Center">jQuery Learning Center</a></h2>
+
+		<aside><div id="broadcast"><a href="https://engine.adzerk.net/r?e=eyJhdiI6MjIyMzYsImF0IjoxMzE0LCJidCI6MCwiY20iOjcxOTMyLCJjaCI6ODM2OCwiY3IiOjE5OTc3NSwiZGkiOiJkYjJmNWE3YTdmMDI0YjZlOTQ4YmNhN2ZjY2Q4MGJiOCIsImRtIjoxLCJmYyI6MjUxODg2LCJmbCI6MTI3ODc0LCJpcCI6IjEyOC4xNzcuMTEzLjEwNiIsIm53Ijo1NDQ5LCJwYyI6MCwicHIiOjIxOTM3LCJydCI6MSwicmYiOiJodHRwczovL3N0dWRlbnRzLmdhbHZhbml6ZS5jb20vY29ob3J0cy8xMy9kYWlseV9wbGFucy8yMDE1LTA1LTIwIiwic3QiOjUzODI5LCJ1ayI6InVlMS0zNGYxZDVlNzA4ZWY0ZGEwOGY2Y2Y5YWU3Mjc5MGZhYSIsInRzIjoxNDMyMTY1MDM5NjAwLCJiZiI6dHJ1ZSwicG4iOiJicm9hZGNhc3QiLCJ1ciI6Imh0dHBzOi8vanF1ZXJ5Lm9yZy9kb25hdGUvIn0&s=8RYMuifCNRFVdnFEYS1PLKwOKXU" rel="nofollow" target="_blank" title="Support the jQuery Foundation"><img src="./2015-05-18-DOM manipulation_files/bc85dff2b3dc44ddb9650e1659b1ad1e.png" title="Support the jQuery Foundation" alt="Support the jQuery Foundation" border="0" width="400" height="100"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./2015-05-18-DOM manipulation_files/i.gif"></div></aside>
+	</div>
+
+	<nav id="main" class="constrain clearfix">
+		<div class="menu-top-container">
+	<ul id="menu-top" class="menu l_tinynav2">
+<li class="menu-item"><a href="http://learn.jquery.com/">Home</a></li>
+<li class="menu-item"><a href="http://learn.jquery.com/about/">About</a></li>
+<li class="menu-item"><a href="http://learn.jquery.com/contributing/">Contributing</a></li>
+<li class="menu-item"><a href="http://learn.jquery.com/style-guide/">Style Guide</a></li>
+	</ul><select id="tinynav2" class="tinynav tinynav2"><option>Navigate...</option><option value="http://learn.jquery.com">Home</option><option value="http://learn.jquery.com/about/">About</option><option value="http://learn.jquery.com/contributing/">Contributing</option><option value="http://learn.jquery.com/style-guide/">Style Guide</option></select>
+</div>
+
+		<form method="get" class="searchform" action="https://learn.jquery.com/">
+	<button type="submit" class="icon-search"><span class="visuallyhidden">search</span></button>
+	<label>
+		<span class="visuallyhidden">Search jQuery Learning Center</span>
+		<input type="text" name="s" value="" placeholder="Search">
+	</label>
+</form>
+	</nav>
+
+	<div id="content-wrapper" class="clearfix row">
+
+<div class="beta-ribbon-wrapper"><div class="beta-ribbon"><a href="https://learn.jquery.com/about/#beta">Beta</a></div></div>
+<div class="content-right twelve columns">
+	<div id="content">
+		<div class="post-heirarchy">Posted in: <a href="https://learn.jquery.com/about-jquery/">About jQuery</a></div><article id="post-53" class="post-53 page type-page status-publish hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">How jQuery Works</h1>
+	</header>
+
+	<div class="entry-content">
+		<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#jquery-the-basics" id="jquery-the-basics" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> jQuery: The Basics</h3><p>This is a basic tutorial, designed to help you get started using jQuery. If you don't have a test page setup yet, start by creating the following HTML page:</p>
+<div class="syntaxhighlighter xml nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://jquery.com/"</span>&gt;</span>jQuery<span class="tag">&lt;/<span class="title">a</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"jquery.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="comment">// Your code goes here.</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>The <code>src</code> attribute in the <code>&lt;script&gt;</code> element must point to a copy of jQuery. Download a copy of jQuery from the <a href="http://jquery.com/download/">Downloading jQuery</a> page and store the <code>jquery.js</code> file in the same directory as your HTML file.</p>
+<p><em>Note: When you download jQuery, the file name may contain a version number, e.g., <code>jquery-x.y.z.js</code>. Make sure to either rename this file to <code>jquery.js</code> or update the <code>src</code> attribute of the <code>&lt;script&gt;</code> element to match the file name.</em></p>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#launching-code-on-document-ready" id="launching-code-on-document-ready" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Launching Code on Document Ready</h3><p>To ensure that their code runs after the browser finishes loading the document, many JavaScript programmers wrap their code in an <code>onload</code> function:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>window.onload = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"welcome"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>};</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the <a href="http://api.jquery.com/ready/">ready event</a>:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="comment">// Your code here.</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>For example, inside the <code>ready</code> event, you can add a click handler to the link:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"a"</span> ).click(<span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>        alert( <span class="string">"Thanks for visiting!"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Copy the above jQuery code into your HTML file where it says <code>// Your code goes here</code>. Then, save your HTML file and reload the test page in your browser. Clicking the link should now first display an alert pop-up, then continue with the default behavior of navigating to <a href="http://jquery.com/">http://jquery.com</a>.</p>
+<p>For <code>click</code> and most other <a href="http://api.jquery.com/category/events/">events</a>, you can prevent the default behavior by calling <code>event.preventDefault()</code> in the event handler:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"a"</span> ).click(<span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>        alert( <span class="string">"As you can see, the link no longer took you to jquery.com"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>        event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Try replacing your first snippet of jQuery code, which you previously copied in to your HTML file, with the one above. Save the HTML file again and reload to try it out.</p>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#complete-example" id="complete-example" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Complete Example</h3><p>The following example illustrates the click handling code discussed above, embedded directly in the HTML <code>&lt;body&gt;</code>. Note that in practice, it is usually better to place your code in a separate JS file and load it on the page with a <code>&lt;script&gt;</code> element's <code>src</code> attribute.</p>
+<div class="syntaxhighlighter xml nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://jquery.com/"</span>&gt;</span>jQuery<span class="tag">&lt;/<span class="title">a</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"jquery.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    $( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>        $( <span class="string">"a"</span> ).click(<span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>            alert( <span class="string">"The link will no longer take you to jquery.com"</span> );</code></div></div><div class="container"><div class="line"><code>            event.preventDefault();</code></div></div><div class="container"><div class="line"><code>        });</code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#adding-and-removing-an-html-class" id="adding-and-removing-an-html-class" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Adding and Removing an HTML Class</h3><p><strong>Important:</strong> <em>You must place the remaining jQuery examples inside the <code>ready</code> event so that your code executes when the document is ready to be worked on.</em></p>
+<p>Another common task is adding or removing a class.</p>
+<p>First, add some style information into the <code>&lt;head&gt;</code> of the document, like this:</p>
+<div class="syntaxhighlighter xml nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">a</span><span class="class">.test</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> bold;</span></span></code></div></div><div class="container"><div class="line"><code><span class="rule">}</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Next, add the <a href="http://api.jquery.com/addClass/">.addClass()</a> call to the script:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"a"</span> ).addClass( <span class="string">"test"</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>All <code>&lt;a&gt;</code> elements are now bold.</p>
+<p>To remove an existing class, use <a href="http://api.jquery.com/removeClass/">.removeClass()</a>:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"a"</span> ).removeClass( <span class="string">"test"</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#special-effects" id="special-effects" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Special Effects</h3><p>jQuery also provides some handy <a href="http://api.jquery.com/category/effects/">effects</a> to help you make your web sites stand out. For example, if you create a click handler of:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"a"</span> ).click(<span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).hide( <span class="string">"slow"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Then the link slowly disappears when clicked.</p>
+<h2 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#callbacks-and-functions" id="callbacks-and-functions" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Callbacks and Functions</h2><p>Unlike many other programming languages, JavaScript enables you to freely pass functions around to be executed at a later time. A <em>callback</em> is a function that is passed as an argument to another function and is executed after its parent function has completed. Callbacks are special because they patiently wait to execute until their parent finishes. Meanwhile, the browser can be executing other functions or doing all sorts of other work.</p>
+<p>To use callbacks, it is important to know how to pass them into their parent function.</p>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#callback-without-arguments" id="callback-without-arguments" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Callback <em>without</em> Arguments</h3><p>If a callback has no arguments, you can pass it in like this:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"myhtmlpage.html"</span>, myCallBack );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>When <a href="http://api.jquery.com/jQuery.get/">$.get()</a> finishes getting the page <code>myhtmlpage.html</code>, it executes the <code>myCallBack()</code> function.</p>
+<ul>
+<li><strong>Note:</strong> The second parameter here is simply the function name (but <em>not</em> as a string, and without parentheses).</li>
+</ul>
+<h3 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#callback-with-arguments" id="callback-with-arguments" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Callback <em>with</em> Arguments</h3><p>Executing callbacks with arguments can be tricky.</p>
+<h4 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#wrong" id="wrong" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Wrong</h4><p>This code example will <strong><em>not</em></strong> work:</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"myhtmlpage.html"</span>, myCallBack( param1, param2 ) );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>The reason this fails is that the code executes <code>myCallBack( param1, param2 )</code> immediately and then passes <code>myCallBack()</code>'s <em>return value</em> as the second parameter to <code>$.get()</code>. We actually want to pass the function <code>myCallBack()</code>, not <code>myCallBack( param1, param2 )</code>'s return value (which might or might not be a function). So, how to pass in <code>myCallBack()</code> <em>and</em> include its arguments?</p>
+<h4 class="toc-linked"><a href="https://learn.jquery.com/about-jquery/how-jquery-works/#right" id="right" class="icon-link toc-link"><span class="visuallyhidden">link</span></a> Right</h4><p>To defer executing <code>myCallBack()</code> with its parameters, you can use an anonymous function as a wrapper. Note the use of <code>function() {</code>. The anonymous function does exactly one thing: calls <code>myCallBack()</code>, with the values of <code>param1</code> and <code>param2</code>.</p>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"myhtmlpage.html"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    myCallBack( param1, param2 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>When <code>$.get()</code> finishes getting the page <code>myhtmlpage.html</code>, it executes the anonymous function, which executes <code>myCallBack( param1, param2 )</code>.</p>					</div>
+
+	<div class="entry-meta row">
+				<div class="bottom-links row">
+							<div class="prev six columns">
+					<a href="https://learn.jquery.com/about-jquery/">
+					<i class="icon-chevron-left"></i>
+					About jQuery					</a>
+				</div>
+										<div class="next six columns">
+					<a href="https://learn.jquery.com/about-jquery/additional-support/">
+					Additional jQuery Support					<i class="icon-chevron-right"></i>
+					</a>
+				</div>
+					</div>
+		
+		<aside class="meta-details six columns">
+			<h3>Last Updated</h3>
+			<ul>
+				<li class="icon-calendar icon-large" title="Last Updated"><span>January 6, 2015</span></li>
+			</ul>
+		</aside>
+		<aside class="github-feedback six columns">
+			<h3>Suggestions, Problems, Feedback?</h3>
+			<a class="button dark" href="https://github.com/jquery/learn.jquery.com/tree/master/page/about-jquery/how-jquery-works.md"><i class="icon-github"></i> Open an Issue or Submit a Pull Request on GitHub</a>
+		</aside>
+
+	</div>
+</article>
+	</div>
+
+	<div id="sidebar" class="widget-area" role="complementary">
+		
+		<aside id="chapter-listing" class="widget">
+			<h3 class="widget-title">Chapters</h3>
+			<ul>
+																		<li class="active">
+						<a href="https://learn.jquery.com/about-jquery/">
+															<i class="icon-certificate"></i>
+														About jQuery						</a>
+																																																																									</li>
+														<li>
+						<a href="https://learn.jquery.com/using-jquery-core/">
+															<i class="icon-star-empty"></i>
+														Using jQuery Core						</a>
+																																																																																																																																																																																																																																																																																										<ul class="sub-chapter">
+																																																																																																																																																																																																																																																																																	<li>
+										<a href="https://learn.jquery.com/using-jquery-core/faq/">
+											Frequently Asked Questions										</a>
+									</li>
+																									</ul>
+																		</li>
+														<li>
+						<a href="https://learn.jquery.com/events/">
+															<i class="icon-tasks"></i>
+														Events						</a>
+																																																																																																																																																																																																	</li>
+														<li>
+						<a href="https://learn.jquery.com/effects/">
+															<i class="icon-picture"></i>
+														Effects						</a>
+																																																																																								</li>
+														<li>
+						<a href="https://learn.jquery.com/ajax/">
+															<i class="icon-refresh"></i>
+														Ajax						</a>
+																																																																																																																						</li>
+														<li>
+						<a href="https://learn.jquery.com/plugins/">
+															<i class="icon-bolt"></i>
+														Plugins						</a>
+																																																																																																							</li>
+														<li>
+						<a href="https://learn.jquery.com/performance/">
+															<i class="icon-dashboard"></i>
+														Performance						</a>
+																																																																																																																																																				</li>
+														<li>
+						<a href="https://learn.jquery.com/code-organization/">
+															<i class="icon-sitemap"></i>
+														Code Organization						</a>
+																																																																																																																																				<ul class="sub-chapter">
+																																																																																																							<li>
+										<a href="https://learn.jquery.com/code-organization/deferreds/">
+											Deferreds										</a>
+									</li>
+																									</ul>
+																		</li>
+														<li>
+						<a href="https://learn.jquery.com/jquery-ui/">
+															<i class="icon-magnet"></i>
+														jQuery UI						</a>
+																																																																																																																																																																				<ul class="sub-chapter">
+																																																																																																							<li>
+										<a href="https://learn.jquery.com/jquery-ui/widget-factory/">
+											Widget Factory										</a>
+									</li>
+																																												<li>
+										<a href="https://learn.jquery.com/jquery-ui/environments/">
+											Using jQuery UI										</a>
+									</li>
+																									</ul>
+																		</li>
+														<li>
+						<a href="https://learn.jquery.com/jquery-mobile/">
+															<i class="icon-th-large"></i>
+														jQuery Mobile						</a>
+																																																																									</li>
+							</ul>
+		</aside>
+
+
+	</div><!-- #sidebar .widget-area -->
+</div>
+
+	</div>
+</div>
+
+<footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3><span>Books</span></h3>
+				<ul class="books">
+					<li>
+						<a href="https://www.packtpub.com/web-development/learning-jquery-fourth-edition">
+							<img src="./2015-05-18-DOM manipulation_files/learning-jquery-4th-ed.jpg" alt="Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer" width="92" height="114">
+							Learning jQuery Fourth Edition
+							<cite>Karl Swedberg and Jonathan Chaffer</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.manning.com/derosa?a_aid=141d9491&a_bid=bdd5b7ad">
+							<img src="./2015-05-18-DOM manipulation_files/jquery-in-action.jpg" alt="jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa" width="92" height="114">
+							jQuery in Action
+							<cite>Bear Bibeault, Yehuda Katz, and Aurelio De Rosa</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.syncfusion.com/resources/techportal/ebooks/jquery?utm_medium=BizDev-jQuery.org0513">
+							<img src="./2015-05-18-DOM manipulation_files/jquery-succinctly.jpg" alt="jQuery Succinctly by Cody Lindley" width="92" height="114">
+							jQuery Succinctly
+							<cite>Cody Lindley</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<div id="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="http://learn.jquery.com/">Learning Center</a></li>
+			<li><a class="icon-group" href="http://forum.jquery.com/">Forum</a></li>
+			<li><a class="icon-wrench" href="http://api.jquery.com/">API</a></li>
+			<li><a class="icon-twitter" href="https://twitter.com/jquery">Twitter</a></li>
+			<li><a class="icon-comments" href="http://irc.jquery.org/">IRC</a></li>
+			<li><a class="icon-github" href="https://github.com/jquery">GitHub</a></li>
+	</ul>
+	<p class="copyright">
+		Copyright 2015 <a href="https://jquery.org/team/">The jQuery Foundation</a>.
+		<a href="https://jquery.org/license/">jQuery License</a>
+		<span class="sponsor-line"><a href="http://mediatemple.net/" rel="nofollow" class="mt-link">Web hosting by Media Temple</a> | <a href="http://www.maxcdn.com/" rel="nofollow" class="mc-link">CDN by MaxCDN</a> | <a href="http://wordpress.org/" class="wp-link">Powered by WordPress</a> | Thanks: <a href="https://jquery.org/members/">Members</a>, <a href="https://jquery.org/sponsors/">Sponsors</a></span>
+	</p>
+</div>
+
+	</div>
+</footer>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1076265-1']);
+    _gaq.push(['_setDomainName', 'learn.jquery.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script type="text/javascript" src="./2015-05-18-DOM manipulation_files/comment-reply.min.js"></script>
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

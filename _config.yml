@@ -1,6 +1,6 @@
 # Site settings
-title: DVS Programming Blog
-smalltalk: "Full-stack Jedi Knighthood Awaits"
+title: Dom Meets Web
+smalltalk: "On the Path to Becomming A Full-Stack Developer"
 description: > # Dominic Smith's blog on his journey towards becomming a full-stack Jedi
 baseurl: "" # the subpath of your site, e.g. /blog/
 paginate: 5
