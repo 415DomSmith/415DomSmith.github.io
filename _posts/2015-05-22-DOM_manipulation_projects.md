@@ -7,15 +7,10 @@ categories: gSchool Blog projects
 image: true
 ---
 
-Here are a couple of mini-projects in DOM manipulation, like my [pixel art page](http://415domsmith.github.io/pixelArt/) from my last post. 
+Here are a couple of mini-projects in DOM manipulation, [Memory Game](http://415domsmith.github.io/memoryGame/), and [Rock, Paper, Scissors.](http://415domsmith.github.io/rockPaperScissors/).
 
-Write-up to come, but for now here are the links.
-<br>
-<br>
-[Memory Game.](http://415domsmith.github.io/memoryGame/)
+Write-up to come, but for now enjoy the links.
 
-<br>
-<br>
 
-[Rock, Paper, Scissors.](http://415domsmith.github.io/rockPaperScissors/)
+
 
