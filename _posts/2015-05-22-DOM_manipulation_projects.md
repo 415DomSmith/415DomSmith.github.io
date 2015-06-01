@@ -10,7 +10,8 @@ image: true
 Here are a couple of mini-projects in DOM manipulation, like my [pixel art page](http://415domsmith.github.io/pixelArt/) from my last post. 
 
 Write-up to come, but for now here are the links.
-
+<br>
+<br>
 [Memory Game.](http://415domsmith.github.io/memoryGame/)
 
 <br>
