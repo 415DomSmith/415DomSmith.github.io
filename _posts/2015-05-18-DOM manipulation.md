@@ -7,7 +7,7 @@ categories: gSchool Blog events
 image: true
 ---
 
-Dom (me) is easily manipulated by cookies. DOM (Document Object Model) is not. Talking about the DOM, and showing off a [mini-project](http://415domsmith.github.io/pixelArt/)
+Dom (me) is easily manipulated by cookies. DOM (Document Object Model) is not. Talking about the DOM, and showing off a [mini-project.](http://415domsmith.github.io/pixelArt/)
 
 This past week we've been working with the DOM, and learning how to manipulate it using Javascript.
 
