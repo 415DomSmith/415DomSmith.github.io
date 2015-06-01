@@ -48,7 +48,7 @@ Here's the code for the canvas function:
  <a class="jsbin-embed" href="http://jsbin.com/mepopevica/1/embed?js">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 
 <br>
-So the end result is [this](http://415domsmith.github.io/pixelArt/).
+So the end result is [this little pixel drawing page.](http://415domsmith.github.io/pixelArt/). Check it out and play around.
 
 <br>
 
