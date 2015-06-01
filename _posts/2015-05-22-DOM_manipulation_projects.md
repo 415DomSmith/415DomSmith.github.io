@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "More Adventures in DOM Manipulation"
-date:   2015-05-27 17:36:05
+date:   2015-05-22 17:36:05
 author: Dominic V. Smith
 categories: gSchool Blog projects
 image: true
