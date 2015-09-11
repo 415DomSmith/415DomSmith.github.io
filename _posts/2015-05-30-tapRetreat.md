@@ -10,4 +10,3 @@ image: true
 Under represented minorities in the tech industry. Post to come.
 
 
-<img class="img-responsive img-post" src=" {{site.baseurl}}/img/avatar.jpg "/>
