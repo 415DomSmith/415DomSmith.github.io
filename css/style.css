@@ -61,7 +61,13 @@
   display: block;
   text-align: center; }
 
+.leftist {
+  float: left;
+}
+
 /*This is the various styles of colors*/
+
+
 .pi-default {
   background-color: #32A367;
   border: solid 1px #001728; }
