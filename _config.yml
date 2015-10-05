@@ -1,6 +1,6 @@
 # Site settings
 title: Dom Meets Web
-smalltalk: "On the Path to Becomming A Full-Stack Developer"
+smalltalk: "See what I did there?"
 description: > # Dominic Smith's blog on his journey towards becomming a full-stack Jedi
 baseurl: "" # the subpath of your site, e.g. /blog/
 paginate: 5
