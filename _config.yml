@@ -5,10 +5,10 @@ description: > # Dominic Smith's blog on his journey towards becomming a full-st
 baseurl: "" # the subpath of your site, e.g. /blog/
 paginate: 5
 url: "" # the base hostname & protocol for your site
-twitter_username: 
+twitter_username: @415domsmith
 github_username:  
 facebook_username: 
-portfolio_url: 
+portfolio_url: http://415domsmith.github.io/doms_portfolio/
 
 # Build settings
 markdown: kramdown
