@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pushing files to Amazon s3 using Angular and Rails"
-date:   2015-09-28 17:36:05
+date:   2015-10-3 17:36:05
 author: Dominic V. Smith
 categories: gSchool Blog technical Rails Angular
 image: true
@@ -18,7 +18,7 @@ What I want to talk about for the rest of this post is how to implement the Rail
 
 We'll make a quick Rails app and scaffold it.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 $ rails new photo_viewer -TBd postgresql
 $ cd photo_viewer/
 $ rails g scaffold image name:string url:string
@@ -26,19 +26,19 @@ $ rails g scaffold image name:string url:string
 
 In order to attach photos with Paperclip, you need to have [Imagemagick](http://www.imagemagick.org/script/index.php) installed. If you do not have it installed already, you can use homebrew to install it pretty easily.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 $ brew install imagemagick
 {% endhighlight %}
 
 If you are dealing with pdf uploads or running the test suite, you'll also need to install [GhostScript](http://www.ghostscript.com/). 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 $ brew install gs
 {% endhighlight %}
 
 In our gem file, we'll add the following gems:
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 gem 'aws-sdk', '~> 1.6'
 gem 'paperclip', '~> 4.3'
 {% endhighlight %}
@@ -47,14 +47,14 @@ and then bundle, and create migrations. A special note on using aws-sdk, the mos
 
 Paperclip has a migration generator, where all we need to do is specify the model and the name of our attachment. We'll call our attachments photo.
 
-{% highlight ruby linenos %}
-$ bundle
-$ rails generate paperclip Image photo
+{% highlight ruby %}
+$ $ bundle
+$ $ rails generate paperclip Image photo
 {% endhighlight %}
 
 Next we need to create our DB, and implement our migrations.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 $ rake db:create
 $ rake db:migrate
 {% endhighlight %}
@@ -62,7 +62,7 @@ $ rake db:migrate
 When we look at our Schema, we see that the Paperclip migration added some important columns in our images table. 
 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
@@ -106,7 +106,7 @@ Also note that we removed ```//= require turbolinks``` from application.js becau
 
 While we're in application.html.erb, let's also remove the yield tag from the body of our file, and add in some Angular directive tags.
 
-{% highlight ruby %}
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,7 +121,9 @@ While we're in application.html.erb, let's also remove the yield tag from the bo
 </html>
 {% endhighlight %}
 
-And don't forget to bundle after removing ```gem 'turbolinks'```
+And don't forget to bundle after removing ```gem 'turbolinks'``` .
+
+
 
 
 
@@ -129,7 +131,7 @@ Next we'll modify our image.rb model to accept Paperclip attachments, and we'll 
 
 In image.rb we want to tell the model that it has attached files, and also tell it what type of attachments it should accept.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class Image < ActiveRecord::Base
 	has_attached_file :photo
 
