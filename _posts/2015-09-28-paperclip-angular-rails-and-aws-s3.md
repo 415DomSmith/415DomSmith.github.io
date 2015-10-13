@@ -18,25 +18,23 @@ What I want to talk about for the rest of this post is how to implement the Rail
 
 We'll make a quick Rails app and scaffold it.
 
-```
+{% highlight ruby linenos %}
 1 $ rails new photo_viewer -TBd postgresql
 2 $ cd photo_viewer/
 3 $ rails g scaffold image name:string url:string
+{% endhighlight %}
 
-```
 In order to attach photos with Paperclip, you need to have [Imagemagick](http://www.imagemagick.org/script/index.php) installed. If you do not have it installed already, you can use homebrew to install it pretty easily.
 
-```
+{% highlight ruby linenos %}
 1 $ brew install imagemagick
-
-```
+{% endhighlight %}
 
 If you are dealing with pdf uploads or running the test suite, you'll also need to install GhostScript. 
 
-```
+{% highlight ruby linenos %}
 1 $ brew install gs
-
-```
+{% endhighlight %}
 
 In our gem file, we'll add the following gems:
 
@@ -49,18 +47,17 @@ and then bundle, and create migrations. A special note on using aws-sdk, the mos
 
 Paperclip has a migration generator, where all we need to do is specify the model and the name of our attachment. We'll call our attachments photo.
 
-```
+{% highlight ruby linenos %}
 1 $ bundle
 2 $ rails generate paperclip Image photo
-
-```
+{% endhighlight %}
 
 Next we need to create our DB, and implement our migrations.
 
-```
+{% highlight ruby linenos %}
 1 $ rake db:create
 2 $ rake db:migrate
-```
+{% endhighlight %}
 
 When we look at our Schema, we see that the Paperclip migration added some important columns in our images table. 
 
@@ -109,7 +106,7 @@ end
 
 
 <div class="post-img">
-	<img class="img-responsive img-post" src=" {{site.baseurl}}/img/pixelArtDemo.png"/>
+	<img class="img-responsive img-post" src=""/>
 </div>
 
 
