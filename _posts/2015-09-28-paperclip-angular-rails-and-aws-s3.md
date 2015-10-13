@@ -98,11 +98,31 @@ application.js should look like this:
 //= require_tree .
 {% endhighlight %}
 
-Also note that we removed ```//= require turbolinks``` from application.js because turbolinks can cause problems with Angular. It's a good idea to remove the turbolinks gem from our gemfile, and also remove turbolinks dependency from our ```app/views/layouts/application.html.erb``` file. In the head of our application.html.erb file, change the ```javascript_include_tag``` to not include turbolinks.
+Also note that we removed ```//= require turbolinks``` from application.js because turbolinks can cause problems with Angular. It's a good idea to remove the turbolinks gem from our gemfile, and also remove turbolinks dependency from our ```app/views/layouts/application.html.erb``` file. In the head of our application.html.erb file, change the ```javascript_include_tag``` to not include turbolinks. 
 
 {% highlight ruby %}
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 {% endhighlight %}
+
+While we're in application.html.erb, let's also remove the yield tag from the body of our file, and add in some Angular directive tags.
+
+{% highlight ruby %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ContactsApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app>
+   
+</body>
+</html>
+{% endhighlight %}
+
+And don't forget to bundle after removing ```gem 'turbolinks'```
+
 
 
 Next we'll modify our image.rb model to accept Paperclip attachments, and we'll also set the foundation for saving our files to s3.
